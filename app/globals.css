@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    background: #0B2A32;
+    color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid #C9956A;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .heading-display {
+    @apply font-bold text-white;
+    font-size: clamp(26px, 4vw, 34px);
+    line-height: 1.22;
+    letter-spacing: -0.02em;
+  }
+
+  .cta-primary {
+    @apply bg-gold-500 text-ink-900 uppercase tracking-wider font-extrabold;
+    border-radius: 10px;
+    padding: 18px 28px;
+    font-size: 15px;
+    transition: background-color 120ms ease, opacity 120ms ease, transform 120ms ease;
+  }
+  .cta-primary:hover:not(:disabled) {
+    @apply bg-gold-400;
+  }
+  .cta-primary:active:not(:disabled) {
+    transform: translateY(1px);
+  }
+  .cta-primary:disabled {
+    opacity: 0.32;
+    cursor: not-allowed;
+  }
+
+  .option-card {
+    @apply w-full text-left rounded-card border-[1.5px] border-white/10 bg-white/[0.06] text-white p-5 transition-colors;
+  }
+  .option-card:hover {
+    @apply bg-white/[0.10] border-gold-500/40;
+  }
+  .option-card[data-selected="true"] {
+    @apply bg-gold-500/10 border-gold-500;
+  }
+  .option-card[data-selected="true"] .opt-title {
+    @apply text-gold-500;
+  }
+
+  .pill {
+    @apply inline-flex items-center px-5 py-2.5 rounded-full border-[1.5px] border-white/10 bg-white/[0.06] text-sm font-semibold cursor-pointer select-none transition-colors;
+    color: rgba(255,255,255,0.55);
+  }
+  .pill:hover {
+    @apply border-gold-500/50 text-gold-400;
+  }
+  .pill[data-selected="true"] {
+    @apply border-gold-500 text-gold-500 bg-gold-500/10;
+  }
+
+  .money-input {
+    @apply w-full pl-14 pr-5 py-4 rounded-cta border-[1.5px] border-white/15 bg-white/[0.07] text-white outline-none transition-colors text-3xl font-extrabold;
+    caret-color: #C9956A;
+  }
+  .money-input:focus {
+    @apply border-gold-500/60;
+  }
+  .money-input::placeholder {
+    @apply text-white/20 text-2xl font-normal;
+  }
+
+  .lead-input {
+    @apply w-full px-4 py-3.5 rounded-cta border-[1.5px] border-white/15 bg-white/[0.07] text-white outline-none transition-colors text-base font-medium;
+    caret-color: #C9956A;
+  }
+  .lead-input::placeholder {
+    @apply text-white/25;
+  }
+  .lead-input:focus {
+    @apply border-gold-500/60;
+  }
+
+  .field-label {
+    @apply block text-sm font-bold text-white/65 mb-3;
+  }
+}
