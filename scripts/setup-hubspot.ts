@@ -201,7 +201,7 @@ async function ensureProperty(p: PropertyDef): Promise<void> {
 async function main() {
   console.log("\n🛠  Setup HubSpot — Calculadora Oficinas\n");
   console.log(`   Endpoint: ${API}`);
-  console.log(`   Token: ${TOKEN.slice(0, 8)}…${TOKEN.slice(-4)}\n`);
+  console.log(`   Token: ${TOKEN!.slice(0, 8)}…${TOKEN!.slice(-4)}\n`);
 
   for (const p of PROPERTIES) {
     try {
